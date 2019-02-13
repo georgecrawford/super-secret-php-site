@@ -1,10 +1,6 @@
-<h1>my lovely site</h1>
-
-
-
-
 <?php
 
+include('snippets/header.php');
 
 $KNOWN_EMAIL = 'root@root.com';
 $KNOWN_PASSWORD = 'root';
@@ -32,3 +28,4 @@ if ($_POST) {
 	include('snippets/login-form.php');
 }
 
+include('snippets/footer.php');
