@@ -1,1 +1,1 @@
-<p>Welcome to my site, <?php echo $KNOWN_NAME ?>!</p>
+<p>Welcome to my site!</p>

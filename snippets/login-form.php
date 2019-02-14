@@ -1,4 +1,4 @@
-<form action="index.php" method="post">
+<form action="login.php" method="post">
 	<p>
 		<label for="email">Email address</label>
 		<input id="email" type="email" name="email" placeholder="Enter your email address here" />		
@@ -9,5 +9,5 @@
 		<input id="password" type="password" name="password" />
 	</p>
 
-	<input type="submit" name="action" value="Log in" />
+	<input type="submit" name="action" value="log-in" />
 </form>
