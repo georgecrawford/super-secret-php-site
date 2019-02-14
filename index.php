@@ -3,6 +3,8 @@
 session_start();
 
 include_once('database.php');
+include_once('session.php');
+
 include('snippets/header.php');
 
 $KNOWN_EMAIL = 'root@root.com';
@@ -21,7 +23,7 @@ if ($_POST) {
 
 			if (validateLogin($email, $password)) {
 				// The login was good
-				$_SESSION['loggedIn'] = true;
+				setSessionLoggedIn();
 				include('snippets/login-success.php');
 				include('snippets/logout-form.php');
 			} else {
@@ -33,7 +35,7 @@ if ($_POST) {
 
 		case 'Log out':
 			// They want to log out
-			$_SESSION['loggedIn'] = false;
+			setSessionLoggedOut();
 			include('snippets/logout-success.php');
 			include('snippets/login-form.php');
 			break;
@@ -44,7 +46,7 @@ if ($_POST) {
 	}
 
 
-} else if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
+} else if (isSessionLoggedIn()) {
 	// The user was already logged-in
 	include('snippets/welcome-back.php');
 	include('snippets/logout-form.php');
