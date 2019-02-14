@@ -2,12 +2,12 @@
 
 session_start();
 
+include_once('database.php');
 include('snippets/header.php');
 
 $KNOWN_EMAIL = 'root@root.com';
 $KNOWN_PASSWORD = 'root';
 $KNOWN_NAME = 'George';
-
 
 if ($_POST) {
 	// The user has submitted a form
@@ -19,7 +19,7 @@ if ($_POST) {
 			$password = isset($_POST['password']) ? $_POST['password'] : null;
 			$email = isset($_POST['email']) ? $_POST['email'] : null;
 
-			if ($password === $KNOWN_PASSWORD && $email === $KNOWN_EMAIL) {
+			if (validateLogin($email, $password)) {
 				// The login was good
 				$_SESSION['loggedIn'] = true;
 				include('snippets/login-success.php');
