@@ -1,5 +1,5 @@
 
         
-        <!-- <script src="js/main.js"></script> -->
+        </section>
     </body>
 </html>

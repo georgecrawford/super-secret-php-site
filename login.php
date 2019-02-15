@@ -15,14 +15,17 @@ if (isset($_POST['action']) && $_POST['action'] === 'log-in') {
 	if (validateLogin($email, $password)) {
 		// The login was good
 		setSessionLoggedIn();
-		header('Location: index.php');
+		setSessionMessage('Thanks for logging-in!');
+		header('Location: ./');
 	} else {
 		// The login was bad
-		include('snippets/login-failure.php');
-		include('snippets/login-form.php');
+		setSessionMessage('Your login failed. Please try again.', 'danger');
+		header('Location: ./login.php');
 	}
 
 } else {
 	// Show the login form
 	include('snippets/login-form.php');
 }
+
+include('snippets/footer.php');

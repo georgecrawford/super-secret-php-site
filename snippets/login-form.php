@@ -1,13 +1,15 @@
 <form action="login.php" method="post">
-	<p>
+	<div class="form-group">
 		<label for="email">Email address</label>
-		<input id="email" type="email" name="email" placeholder="Enter your email address here" />		
-	</p>
+		<input class="form-control" id="email" type="email" name="email" placeholder="Enter your email address here" />		
+	</div>
 
-	<p>
+	<div class="form-group">
 		<label for="password">Password</label>
-		<input id="password" type="password" name="password" />
-	</p>
+		<input class="form-control" id="password" type="password" name="password" />
+	</div>
 
-	<input type="submit" name="action" value="log-in" />
+	<div class="form-group">
+		<input class="form-control" type="submit" name="action" value="log-in" />
+	</div>
 </form>
